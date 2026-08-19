@@ -1,0 +1,167 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --bg-main: #F5F1E8;
+    --bg-cream: #EBE5D9;
+    --bg-white: #FAFAF7;
+    --color-black: #111111;
+    --color-secondary: #65635F;
+    --border-subtle: rgba(17, 17, 17, 0.15);
+  }
+
+  html {
+    background-color: var(--bg-main);
+    color: var(--color-black);
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    scroll-behavior: smooth;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  body {
+    background-color: var(--bg-main);
+    color: var(--color-black);
+    overflow-x: hidden;
+  }
+
+  /* Custom Selection */
+  ::selection {
+    background-color: #111111;
+    color: #F5F1E8;
+  }
+}
+
+/* Typography styles */
+.font-serif-display {
+  font-family: 'Cormorant Garamond', Georgia, serif;
+}
+
+.font-editorial {
+  font-family: 'Instrument Serif', Georgia, serif;
+  font-style: italic;
+}
+
+/* Custom Outlined Text */
+.text-outline-dark {
+  -webkit-text-stroke: 1.5px #111111;
+  color: transparent;
+  transition: color 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.text-outline-dark:hover {
+  color: #111111;
+}
+
+.text-outline-light {
+  -webkit-text-stroke: 1.5px rgba(245, 241, 232, 0.35);
+  color: transparent;
+  transition: color 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.text-outline-light:hover {
+  color: #F5F1E8;
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: #F5F1E8;
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgba(17, 17, 17, 0.25);
+  border-radius: 3px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #111111;
+}
+
+/* Hide default cursor on desktop when custom cursor is active */
+@media (min-width: 1025px) {
+  .custom-cursor-active,
+  .custom-cursor-active a,
+  .custom-cursor-active button,
+  .custom-cursor-active input,
+  .custom-cursor-active textarea,
+  .custom-cursor-active [role="button"] {
+    cursor: none !important;
+  }
+}
+
+/* Lenis smooth scroll recommended fixes */
+html.lenis, html.lenis body {
+  height: auto;
+}
+
+.lenis.lenis-smooth {
+  scroll-behavior: auto !important;
+}
+
+.lenis.lenis-smooth [data-lenis-prevent] {
+  overscroll-behavior: contain;
+}
+
+.lenis.lenis-stopped {
+  overflow: hidden;
+}
+
+.lenis.lenis-scrolling iframe {
+  pointer-events: none;
+}
+
+/* Link underline animation */
+.hover-underline-animation {
+  position: relative;
+}
+
+.hover-underline-animation::after {
+  content: '';
+  position: absolute;
+  width: 100%;
+  transform: scaleX(0);
+  height: 1px;
+  bottom: -2px;
+  left: 0;
+  background-color: currentColor;
+  transform-origin: bottom right;
+  transition: transform 0.35s cubic-bezier(0.65, 0, 0.35, 1);
+}
+
+.hover-underline-animation:hover::after {
+  transform: scaleX(1);
+  transform-origin: bottom left;
+}
+
+/* Glassmorphism Utilities (Darker Off-White Theme) */
+.glass-panel {
+  background: rgba(230, 222, 208, 0.80);
+  backdrop-filter: blur(20px) saturate(160%);
+  -webkit-backdrop-filter: blur(20px) saturate(160%);
+  border: 1px solid rgba(17, 17, 17, 0.12);
+  box-shadow: 0 10px 32px 0 rgba(17, 17, 17, 0.08), inset 0 1px 1px 0 rgba(255, 255, 255, 0.7);
+}
+
+.glass-panel-scrolled {
+  background: rgba(216, 206, 188, 0.92);
+  backdrop-filter: blur(24px) saturate(180%);
+  -webkit-backdrop-filter: blur(24px) saturate(180%);
+  border: 1px solid rgba(17, 17, 17, 0.18);
+  box-shadow: 0 14px 40px 0 rgba(17, 17, 17, 0.12), inset 0 1px 1px 0 rgba(255, 255, 255, 0.85);
+}
+
+/* Reduced motion accessibility */
+@media (prefers-reduced-motion: reduce) {
+  *, ::before, ::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
