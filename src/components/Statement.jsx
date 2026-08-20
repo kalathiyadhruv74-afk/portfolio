@@ -30,7 +30,7 @@ const Statement = () => {
   return (
     <section
       ref={containerRef}
-      className="w-full py-32 md:py-48 px-6 md:px-12 bg-[#111111] text-[#F5F1E8] overflow-hidden select-none relative"
+      className="w-full py-32 md:py-48 px-6 md:px-12 bg-[#1E1E22] text-[#F5F1E8] border-y border-white/10 overflow-hidden select-none relative"
     >
       {/* Background graphic subtle lines */}
       <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top,_var(--tw-gradient-stops))] from-white/5 via-transparent to-transparent pointer-events-none" />

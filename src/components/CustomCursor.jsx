@@ -113,18 +113,14 @@ const CustomCursor = () => {
 
   if (isTouch) return null;
 
-  // Determine classes based on cursor state & underlying background color
-  let sizeClasses = isDarkBg ? 'w-3.5 h-3.5 bg-[#F5F1E8] shadow-md' : 'w-3 h-3 bg-[#111111]';
-  let fontClasses = isDarkBg ? 'text-[10px] font-semibold tracking-wider text-[#111111]' : 'text-[10px] font-semibold tracking-wider text-[#F5F1E8]';
+  // Determine classes based on cursor state
+  let sizeClasses = 'w-3 h-3 bg-[#F5F1E8] shadow-md';
+  let fontClasses = 'text-[10px] font-semibold tracking-wider text-[#141416]';
 
   if (cursorVariant === 'hover') {
-    sizeClasses = isDarkBg
-      ? 'w-10 h-10 bg-[#F5F1E8]/20 border border-[#F5F1E8] backdrop-blur-[1px]'
-      : 'w-10 h-10 bg-[#111111]/20 border border-[#111111] backdrop-blur-[1px]';
+    sizeClasses = 'w-10 h-10 bg-[#F5F1E8]/20 border border-[#F5F1E8] backdrop-blur-[1px]';
   } else if (cursorVariant === 'view' || cursorVariant === 'open') {
-    sizeClasses = isDarkBg
-      ? 'w-20 h-20 bg-[#F5F1E8] text-[#111111] shadow-2xl'
-      : 'w-20 h-20 bg-[#111111] text-[#F5F1E8] shadow-2xl';
+    sizeClasses = 'w-20 h-20 bg-[#F5F1E8] text-[#141416] shadow-2xl';
   }
 
   return (

@@ -23,8 +23,8 @@ const Marquee = () => {
   const trackRef = useRef(null);
 
   useGSAP(() => {
-    // ScrollTrigger to shift marquee speed/direction slightly on scroll
-    gsap.to(trackRef.current, {
+    // Infinite marquee tween animation instance
+    const tween = gsap.to(trackRef.current, {
       xPercent: -50,
       ease: 'none',
       duration: 25,
@@ -36,31 +36,31 @@ const Marquee = () => {
       start: 'top bottom',
       end: 'bottom top',
       onUpdate: (self) => {
-        // Subtle direction tweak on scroll velocity
-        const velocity = self.getVelocity();
-        if (velocity !== 0) {
-          gsap.to(trackRef.current, {
+        // Dynamically adjust the tween's timeScale based on scroll direction
+        if (self.getVelocity() !== 0) {
+          gsap.to(tween, {
             timeScale: self.direction === 1 ? 1.5 : 0.8,
-            duration: 0.5
+            duration: 0.5,
+            overwrite: 'auto',
           });
         }
-      }
+      },
     });
   }, { scope: marqueeContainerRef });
 
   return (
     <section
       ref={marqueeContainerRef}
-      className="w-full py-6 md:py-8 bg-[#EBE5D9] border-y border-[#111111]/15 overflow-hidden select-none"
+      className="w-full py-6 md:py-8 bg-[#1E1E22] border-y border-white/10 overflow-hidden select-none"
     >
       <div className="flex whitespace-nowrap overflow-hidden">
         <div ref={trackRef} className="flex space-x-8 md:space-x-12 items-center will-change-transform">
           {[...marqueeItems, ...marqueeItems, ...marqueeItems].map((item, idx) => (
             <React.Fragment key={idx}>
-              <span className="font-serif-display text-4xl sm:text-5xl md:text-7xl font-bold tracking-tight text-outline-dark hover:text-[#111111] transition-colors duration-300">
+              <span className="font-serif-display text-4xl sm:text-5xl md:text-7xl font-bold tracking-tight text-outline-light hover:text-[#F5F1E8] transition-colors duration-300">
                 {item}
               </span>
-              <span className="text-[#111111]/30 text-xl font-mono">✦</span>
+              <span className="text-white/30 text-xl font-mono">✦</span>
             </React.Fragment>
           ))}
         </div>

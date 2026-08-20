@@ -42,8 +42,8 @@ const Projects = () => {
       className="relative w-full py-24 md:py-36 px-6 md:px-12 bg-transparent"
     >
       {/* Floating fixed project counter indicator */}
-      <div className="hidden lg:flex fixed bottom-12 right-12 z-40 bg-[#111111] text-[#F5F1E8] px-4 py-2 rounded-full border border-[#F5F1E8]/20 shadow-2xl text-xs font-mono tracking-widest items-center space-x-2 pointer-events-none transition-opacity duration-300">
-        <span className="text-[#EBE5D9]">WORK INDEX</span>
+      <div className="hidden lg:flex fixed bottom-12 right-12 z-40 bg-[#1E1E22] text-[#F5F1E8] px-4 py-2 rounded-full border border-white/20 shadow-2xl text-xs font-mono tracking-widest items-center space-x-2 pointer-events-none transition-opacity duration-300">
+        <span className="text-[#A1A1AA]">WORK INDEX</span>
         <span className="text-white/40">|</span>
         <span className="font-bold text-[#F5F1E8]">
           0{activeProjectIndex + 1} / 0{projectsData.length}
@@ -53,19 +53,19 @@ const Projects = () => {
       <div className="max-w-7xl mx-auto space-y-16">
         
         {/* Section Header */}
-        <div className="flex flex-col md:flex-row md:items-end justify-between border-b border-[#111111]/15 pb-8 space-y-4 md:space-y-0">
+        <div className="flex flex-col md:flex-row md:items-end justify-between border-b border-white/10 pb-8 space-y-4 md:space-y-0">
           <div className="space-y-2">
-            <span className="text-xs font-mono tracking-[0.3em] text-[#65635F] uppercase">
+            <span className="text-xs font-mono tracking-[0.3em] text-[#A1A1AA] uppercase">
               02 / SELECTED WORK
             </span>
-            <h2 className="text-5xl sm:text-7xl font-bold tracking-tight text-[#111111]">
+            <h2 className="text-5xl sm:text-7xl font-bold tracking-tight text-[#F5F1E8]">
               Selected <br />
-              <span className="font-editorial italic font-normal text-6xl sm:text-8xl text-[#65635F]">
+              <span className="font-editorial italic font-normal text-6xl sm:text-8xl text-[#A1A1AA]">
                 Projects
               </span>
             </h2>
           </div>
-          <p className="text-xs font-mono tracking-widest text-[#65635F] max-w-xs uppercase">
+          <p className="text-xs font-mono tracking-widest text-[#A1A1AA] max-w-xs uppercase">
             A curation of full-stack applications & backend APIs engineered for performance and utility.
           </p>
         </div>

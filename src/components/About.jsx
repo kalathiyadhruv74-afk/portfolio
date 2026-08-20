@@ -3,6 +3,7 @@ import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import { useGSAP } from '@gsap/react';
 import { GraduationCap, MapPin, Code2, Sparkles } from 'lucide-react';
+import Tilt3D from './Tilt3D';
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -33,16 +34,16 @@ const About = () => {
     <section
       id="about"
       ref={containerRef}
-      className="w-full py-24 md:py-36 px-6 md:px-12 bg-transparent border-b border-[#111111]/15"
+      className="w-full py-24 md:py-36 px-6 md:px-12 bg-transparent border-b border-white/10"
     >
       <div className="max-w-7xl mx-auto space-y-16 md:space-y-24">
         
         {/* Section Label */}
-        <div className="flex items-center justify-between border-b border-[#111111]/15 pb-4">
-          <span className="text-xs font-mono tracking-[0.3em] text-[#65635F] uppercase">
+        <div className="flex items-center justify-between border-b border-white/10 pb-4">
+          <span className="text-xs font-mono tracking-[0.3em] text-[#A1A1AA] uppercase">
             01 / ABOUT
           </span>
-          <span className="text-xs font-mono tracking-widest text-[#111111]">
+          <span className="text-xs font-mono tracking-widest text-[#F5F1E8]">
             EST. 2024 — PRESENT
           </span>
         </div>
@@ -52,39 +53,43 @@ const About = () => {
           
           {/* Headline Column */}
           <div className="lg:col-span-6 space-y-6">
-            <h2 className="text-4xl sm:text-6xl md:text-7xl font-bold tracking-tight text-[#111111] leading-[1.05]">
+            <h2 className="text-4xl sm:text-6xl md:text-7xl font-bold tracking-tight text-[#F5F1E8] leading-[1.05]">
               Developer, <br />
               problem solver & <br />
-              <span className="font-editorial font-normal italic text-5xl sm:text-7xl md:text-8xl text-[#65635F]">
+              <span className="font-editorial font-normal italic text-5xl sm:text-7xl md:text-8xl text-[#A1A1AA]">
                 constant learner.
               </span>
             </h2>
 
-            {/* Quick Fact Cards */}
+            {/* Quick Fact Cards with 3D Tilt */}
             <div className="grid grid-cols-2 gap-4 pt-6">
-              <div className="p-4 bg-[#EBE5D9]/60 border border-[#111111]/10 rounded-sm space-y-1">
-                <div className="flex items-center space-x-2 text-xs text-[#65635F]">
-                  <GraduationCap className="w-4 h-4 text-[#111111]" />
-                  <span className="font-mono">EDUCATION</span>
+              <Tilt3D maxTilt={14} scale={1.04} className="glow-3d rounded-sm">
+                <div className="p-4 bg-[#1E1E22] border border-white/10 rounded-sm space-y-1">
+                  <div className="flex items-center space-x-2 text-xs text-[#A1A1AA] translate-z-20">
+                    <GraduationCap className="w-4 h-4 text-[#F5F1E8]" />
+                    <span className="font-mono">EDUCATION</span>
+                  </div>
+                  <p className="text-sm font-semibold text-[#F5F1E8] translate-z-30">B.E. Computer Science</p>
+                  <p className="text-xs text-[#A1A1AA] translate-z-20">LJIET (Exp. 2028)</p>
                 </div>
-                <p className="text-sm font-semibold text-[#111111]">B.E. Computer Science</p>
-                <p className="text-xs text-[#65635F]">LJIET (Exp. 2028)</p>
-              </div>
+              </Tilt3D>
 
-              <div className="p-4 bg-[#EBE5D9]/60 border border-[#111111]/10 rounded-sm space-y-1">
-                <div className="flex items-center space-x-2 text-xs text-[#65635F]">
-                  <MapPin className="w-4 h-4 text-[#111111]" />
-                  <span className="font-mono">LOCATION</span>
+              <Tilt3D maxTilt={14} scale={1.04} className="glow-3d rounded-sm">
+                <div className="p-4 bg-[#1E1E22] border border-white/10 rounded-sm space-y-1">
+                  <div className="flex items-center space-x-2 text-xs text-[#A1A1AA] translate-z-20">
+                    <MapPin className="w-4 h-4 text-[#F5F1E8]" />
+                    <span className="font-mono">LOCATION</span>
+                  </div>
+                  <p className="text-sm font-semibold text-[#F5F1E8] translate-z-30">Surat, Gujarat</p>
+                  <p className="text-xs text-[#A1A1AA] translate-z-20">India</p>
                 </div>
-                <p className="text-sm font-semibold text-[#111111]">Surat, Gujarat</p>
-                <p className="text-xs text-[#65635F]">India</p>
-              </div>
+              </Tilt3D>
             </div>
           </div>
 
           {/* Description Paragraphs Column */}
-          <div className="lg:col-span-6 space-y-6 text-base sm:text-lg text-[#65635F] leading-relaxed pt-2">
-            <p className="text-[#111111] font-medium text-lg sm:text-xl">
+          <div className="lg:col-span-6 space-y-6 text-base sm:text-lg text-[#A1A1AA] leading-relaxed pt-2">
+            <p className="text-[#F5F1E8] font-medium text-lg sm:text-xl">
               Dhruv Kalathiya is a Full-Stack Web Developer and Computer Science Engineering student at LJIET, focused on building practical web applications that combine thoughtful interfaces with reliable backend systems.
             </p>
             <p>
@@ -94,7 +99,7 @@ const About = () => {
               His goal is simple: build digital products that are useful, intuitive and technically solid.
             </p>
 
-            <div className="pt-4 flex items-center space-x-4 text-xs font-mono tracking-widest text-[#111111] uppercase">
+            <div className="pt-4 flex items-center space-x-4 text-xs font-mono tracking-widest text-[#F5F1E8] uppercase">
               <span className="flex items-center space-x-1.5">
                 <Code2 className="w-4 h-4" />
                 <span>FULL-STACK</span>
@@ -110,18 +115,18 @@ const About = () => {
         </div>
 
         {/* Editorial Statement Quote */}
-        <div className="pt-12 md:pt-16 border-t border-[#111111]/15 space-y-4">
-          <p className="text-xs sm:text-sm font-mono tracking-[0.25em] text-[#65635F] uppercase">
+        <div className="pt-12 md:pt-16 border-t border-white/10 space-y-4">
+          <p className="text-xs sm:text-sm font-mono tracking-[0.25em] text-[#A1A1AA] uppercase">
             Philosophy
           </p>
           <div className="space-y-2">
-            <h3 className="text-2xl sm:text-4xl md:text-5xl font-semibold text-[#111111]">
+            <h3 className="text-2xl sm:text-4xl md:text-5xl font-semibold text-[#F5F1E8]">
               I don't just want websites to work.
             </h3>
             <div className="overflow-hidden">
               <p
                 ref={quoteLineRef}
-                className="font-editorial text-4xl sm:text-6xl md:text-7xl italic font-normal text-[#111111] leading-tight"
+                className="font-editorial text-4xl sm:text-6xl md:text-7xl italic font-normal text-[#F5F1E8] leading-tight"
               >
                 I want them to feel good to use.
               </p>

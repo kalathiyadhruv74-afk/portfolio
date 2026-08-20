@@ -54,7 +54,7 @@ const Loader = ({ onComplete }) => {
   return (
     <div
       ref={containerRef}
-      className="fixed inset-0 z-[9999] flex flex-col items-center justify-center bg-[#EBE5D9] text-[#111111] pointer-events-auto select-none"
+      className="fixed inset-0 z-[9999] flex flex-col items-center justify-center bg-[#0C0C0E] text-[#F5F1E8] pointer-events-auto select-none"
     >
       <div className="overflow-hidden mb-2">
         <h1
@@ -68,16 +68,16 @@ const Loader = ({ onComplete }) => {
       <div className="overflow-hidden">
         <p
           ref={subtitleRef}
-          className="text-xs md:text-sm font-medium tracking-[0.3em] uppercase text-[#65635F]"
+          className="text-xs md:text-sm font-medium tracking-[0.3em] uppercase text-[#A1A1AA]"
         >
           Dhruv Kalathiya — Full-Stack Developer
         </p>
       </div>
 
-      <div className="w-32 h-[1.5px] bg-[#111111]/15 mt-6 overflow-hidden relative rounded-full">
+      <div className="w-32 h-[1.5px] bg-white/15 mt-6 overflow-hidden relative rounded-full">
         <div
           ref={barRef}
-          className="absolute inset-0 bg-[#111111] origin-left scale-x-0"
+          className="absolute inset-0 bg-[#F5F1E8] origin-left scale-x-0"
         />
       </div>
     </div>

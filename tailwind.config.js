@@ -7,12 +7,12 @@ export default {
   theme: {
     extend: {
       colors: {
-        'bg-main': '#F5F1E8',
-        'bg-cream': '#EBE5D9',
-        'bg-white': '#FAFAF7',
-        'dark-main': '#111111',
-        'text-secondary': '#65635F',
-        'border-subtle': 'rgba(17, 17, 17, 0.15)',
+        'bg-main': '#0C0C0E',
+        'bg-cream': '#141418',
+        'bg-white': '#1B1B20',
+        'dark-main': '#F5F1E8',
+        'text-secondary': '#A1A1AA',
+        'border-subtle': 'rgba(255, 255, 255, 0.12)',
         'border-light': 'rgba(255, 255, 255, 0.15)',
       },
       fontFamily: {
