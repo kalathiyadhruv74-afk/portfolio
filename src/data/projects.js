@@ -1,5 +1,6 @@
 import pantrypalImg from '../assets/pantrypal.jpg';
 import bookmycutImg from '../assets/bookmycut.jpg';
+import churnlensImg from '../assets/churnlens.png';
 
 export const projectsData = [
   {
@@ -37,6 +38,25 @@ export const projectsData = [
       'Stylist choice & availability management',
       'Responsive customer booking confirmation workflow'
     ]
+  },
+  {
+    id: '03',
+    number: '03',
+    title: 'ChurnLens',
+    category: 'RETENTION INTELLIGENCE & ML ANALYTICS',
+    description: 'ChurnLens is an end-to-end customer churn prediction and retention intelligence platform that transforms raw telemetry into explainable 0–100 risk scoring, isolates onboarding cliff dropoffs, and triggers automated retention countermeasures.',
+    tech: ['Python', 'Machine Learning', 'SQL', 'Data Analytics', 'JavaScript', 'Tailwind CSS'],
+    liveUrl: 'https://churn-lens.vercel.app/',
+    ctaText: 'VIEW PROJECT ↗',
+    image: churnlensImg,
+    layout: 'left-image', // Image left, content right
+    highlights: [
+      'Explainable 0–100 customer churn risk scoring engine',
+      'Interactive ROI & ARR revenue recovery calculator',
+      '90-Day onboarding cliff & root cause failure analysis',
+      'Automated retention playbooks & smart dunning workflows'
+    ]
   }
 ];
+
 

@@ -7,6 +7,7 @@ import Tilt3D from '../components/Tilt3D';
 import { ArrowRight, Sparkles, Layers, Terminal, Mail } from 'lucide-react';
 import pantrypalImg from '../assets/pantrypal.jpg';
 import bookmycutImg from '../assets/bookmycut.jpg';
+import churnlensImg from '../assets/churnlens.png';
 
 const HomePage = () => {
   return (
@@ -64,12 +65,12 @@ const HomePage = () => {
               className="inline-flex items-center space-x-2 text-xs font-mono tracking-widest text-[#F5F1E8] uppercase hover-underline-animation"
               data-cursor="hover"
             >
-              <span>View All Work (02)</span>
+              <span>View All Work (03)</span>
               <ArrowRight className="w-4 h-4" />
             </Link>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {/* PantryPal Card with Zero-Gravity Floating & 3D Tilt */}
             <Tilt3D maxTilt={12} scale={1.03} className="glow-3d rounded-sm animate-float-medium">
               <div className="group border border-white/15 bg-[#1E1E22] p-6 sm:p-8 rounded-sm space-y-6 transition-all duration-500 relative z-10">
@@ -112,6 +113,33 @@ const HomePage = () => {
                   <h3 className="text-2xl font-bold font-serif text-[#F5F1E8]">BookMyCut</h3>
                   <p className="text-sm text-[#A1A1AA] line-clamp-2">
                     Modern salon appointment booking & service schedule management system.
+                  </p>
+                </div>
+                <Link
+                  to="/work"
+                  className="inline-flex items-center space-x-2 text-xs font-mono tracking-widest text-[#F5F1E8] uppercase group-hover:translate-x-1 transition-transform translate-z-20"
+                >
+                  <span>View Details</span>
+                  <ArrowRight className="w-3.5 h-3.5" />
+                </Link>
+              </div>
+            </Tilt3D>
+
+            {/* ChurnLens Card with Zero-Gravity Floating & 3D Tilt */}
+            <Tilt3D maxTilt={12} scale={1.03} className="glow-3d rounded-sm animate-float-fast">
+              <div className="group border border-white/15 bg-[#1E1E22] p-6 sm:p-8 rounded-sm space-y-6 transition-all duration-500 relative z-10">
+                <div className="aspect-video overflow-hidden rounded-sm border border-white/10 relative z-10 translate-z-20">
+                  <img
+                    src={churnlensImg}
+                    alt="ChurnLens"
+                    className="relative z-10 w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+                  />
+                </div>
+                <div className="space-y-3 translate-z-30">
+                  <span className="text-xs font-mono text-[#A1A1AA] uppercase">RETENTION INTELLIGENCE</span>
+                  <h3 className="text-2xl font-bold font-serif text-[#F5F1E8]">ChurnLens</h3>
+                  <p className="text-sm text-[#A1A1AA] line-clamp-2">
+                    Predictive churn analytics, 0–100 risk scoring & automated retention playbooks.
                   </p>
                 </div>
                 <Link
